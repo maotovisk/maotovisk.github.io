@@ -6,13 +6,76 @@
     <title>Portifólio de Lucas Nascimento Veiga</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="https://fonts.googleapis.com/css?family=Exo+2:300,300italic,200,200italic,400,400italic,500,500italic,600,600italic,700,700italic,900" />
     <script src="js/bootstrap.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-</head>
-<body class="col-md-7 offset-md-2">
-    <h1 class="display-1">Lucas Nascimento Veiga</h1>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"><style>
+    .footer-inicio {
+      align-content: middle;
+      text-align: center;
+    }
+    a + a {
+      margin-left: 5px;
+    }
+    .fa {
+      color: white;
+    }
+    h1 {
+      font-size: 24px;
+    }
+    a {
+      transition: color 0.3s linear;
+    }
+    body {
+        background: linear-gradient(#7777FF, rgb(50, 70, 238));
+        font-family: "Exo 2";
+        color: #ffffff;
+        text-shadow: 2px 3px 5px #333333;
+        height: 1080px;
+    }
+    hr {
+      background-color: #ffffff;
+      height: 1px;
+      border-bottom: black;
+    }
+    a.nav-link {    
+      transition: background-color 0.3s linear;
+    }
+    a:link {
+        color: white;
+    }
+
+    a:visited {
+        color: white;
+    }
+
+    a:hover {
+        color: lightblue;
+        text-decoration: none;
+  }
+
+  a.nav-link:hover {
+        background: rgba(90, 255, 90, 90);
+        color: white;
+        text-decoration: none;
+  }
+    
+
+    a:active {
+        color: white;
+    }
+    .nav-link {
+      border: solid black 1px;
+    }
+    li + li {
+      margin-left: 5px;
+    }
+    </style>
+  </head>
+<body class="col-md-8 offset-md-2">
+    <h1 class="display-3">Lucas Nascimento Veiga</h1>
     <hr>
         <!-- Navegação -->
 <ul class="nav nav-pills mb-3" id="abaNavegacao" role="tablist">
@@ -33,13 +96,12 @@
         <div class="tab-pane active" id="inicio" role="tabpanel" aria-labelledby="aba-inicio">
                 <center><h2>Olá mundo, em breve o portifólio estará pronto! 
                     <br>Enquanto isso, sinta-se à vontade de me contatar nas minhas redes sociais:</h2></center>
-                    
     <hr>
-    <ul>
-    <li><a href="http://facebook.com/lucas.nascimentoveiga">Facebook</a></li>
-    <li><a href="http://github.com/maotovisk">GitHub</a></li>
-    <li><a href="../curriculum.pdf"></a>Curriculum Vitae</li>
-    </ul>
+    <div class="footer-inicio">
+    <a class="rodape" href="http://facebook.com/lucas.nascimentoveiga"><i class="fa fa-facebook"></i> Facebook</a>
+    <a class="rodape" href="http://github.com/maotovisk"><i class="fa fa-github"></i> GitHub</a>
+    <a class="rodape" href="../curriculum.pdf"><i class="fa fa-file-text"></i> Curriculum Vitae </a>
+                </div>
                 </div> <!-- Painel inicio -->
         <div class="tab-pane" id="projetos" role="tabpanel" aria-labelledby="aba-projetos"><h2>Em breve...</h2></div> <!-- Painel projetos-->
         <div class="tab-pane" id="contato" role="tabpanel" aria-labelledby="aba-contato"><h2>Em breve...</h2></div> <!-- Painel contato-->
