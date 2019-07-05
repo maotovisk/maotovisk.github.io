@@ -1,0 +1,59 @@
+ if ((dia >= 21) && (mes = 3) || (dia <= 19) && (mes = 4)) {
+     escreva("aries")
+     } else {
+         if ((dia >= 20) && (mes = 4) || (dia <= 20) && (mes = 5)) {
+             escreva("touro")
+             } else {
+                 if ((dia >= 21) && (mes = 5) || (dia <= 21) && (mes = 6)) {
+                     escreva("gemeos")
+                     } else {
+                         if ((dia >= 22) && (mes = 6) || (dia <= 22) && (mes = 7)) {
+                             escreva("cancer")
+                             } else {
+                                 if ((dia >= 23) && (mes = 7) || (dia <= 22) && (mes = 8)) {
+                                     escreva("leao")
+                                     } else {
+                                         if ((dia >= 23) && (mes = 8) || (dia <= 22) && (mes = 9)) {
+                                             escreva("virgem")
+                                             } else {
+                                                 if ((dia >= 23) && (mes = 9) || (dia <= 22) && (mes = 10)) {
+                                                     escreva("libra")
+                                                     } else {
+                                                         if ((dia >= 23) && (mes = 10) || (dia <= 21) && (mes = 11)) {
+                                                             escreva("escorpião")
+                                                             } else {
+                                                                 if ((dia >= 22) && (mes = 11) || (dia <= 21) && (mes = 12)) {
+                                                                     escreva("sagitario")
+                                                                     } else {
+                                                                         if ((dia >= 22) && (mes = 12) || (dia <= 19) && (mes = 1)) {
+                                                                             escreva("capricornio")
+                                                                             } else {
+                                                                                 if ((dia >= 20) && (mes = 1) || (dia <= 18) && (mes = 2)) {
+                                                                                     escreva("aquario")
+                                                                                     } else {
+                                                                                         if ((dia >= 19) && (mes = 2) || (dia <= 20) && (mes = 3)) {
+                                                                                             escreva("peixes")
+
+                                                                                         }
+                                                                                     }
+                                                                                 }
+                                                                             }
+                                                                         }
+                                                                     }
+                                                                 }
+                                                             }
+                                                         }
+                                                     }
+                                                 }
+                                             }
+                                         }
+                                     }
+                                 }
+                             }
+                         }
+                     }
+                 }
+             }
+         }
+     }
+ }
