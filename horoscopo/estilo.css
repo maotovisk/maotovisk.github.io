@@ -1,13 +1,15 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
 @import url('material-icons.css');
 @import url('gridsystem.css');
+@import url('estrelas.css');
 body {
     font-family: 'Poppins';
     background-color:  rgb(8, 8, 50);
     color: white;
     margin: 0;
     padding: 0;
-    text-align: center; 
+    text-align: center;
+    
 }
 
 @keyframes fadein {
@@ -177,4 +179,9 @@ utilidade de rotação
 	-ms-animation: rotating 8s linear infinite;
 	-o-animation: rotating 8s linear infinite;
 	animation: rotating 8s linear infinite;
+}
+.fixer-bottom {
+    position: absolute;
+    bottom: 20px;
+    right: 60px;
 }

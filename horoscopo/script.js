@@ -1,12 +1,12 @@
 //Constantes
 const descSignos = {
     aries: {
-        nome:"Áries",
-        desc:"Impulsivo, o ariano não pensa muito sobre seus atos. É aquele que primeiro age, depois reflete. Agitado, precisa de muita atividade para gastar a energia, senão pode ficar agressivo e explosivo."
+        nome: "Áries",
+        desc: "Impulsivo, o ariano não pensa muito sobre seus atos. É aquele que primeiro age, depois reflete. Agitado, precisa de muita atividade para gastar a energia, senão pode ficar agressivo e explosivo."
     },
     touro: {
-        nome:"Touro",
-        desc:"Teimoso, o taurino é determinado e protetor. Precisa de segurança e estabilidade para ser feliz, e conquista isso com muito trabalho e concentração. Carinhoso, o taurino pode ser ciumento com quem ama."
+        nome: "Touro",
+        desc: "Teimoso, o taurino é determinado e protetor. Precisa de segurança e estabilidade para ser feliz, e conquista isso com muito trabalho e concentração. Carinhoso, o taurino pode ser ciumento com quem ama."
     },
     gemeos: {
         nome: "Gêmeos",
@@ -32,8 +32,8 @@ const descSignos = {
         nome: "Escorpião",
         desc: "Determinado, o escorpiano vai até o fim para conquistar os seus objetivos. Sensual e romântico, gosta de estar em relacionamentos, mas pode ser desconfiado enquanto não se sentir seguro com a pessoa."
     },
-    sargitario: {
-        nome: "Sargitário",
+    sagitario: {
+        nome: "Sagitário",
         desc: "Um signo de bem com a vida, que está sempre em busca de ação e que vive rodeado de amigos. Este é o signo de sagitário, que é sonhador e adora conhecer pessoas e lugares novos."
     },
     capricornio: {
@@ -47,73 +47,73 @@ const descSignos = {
     peixes: {
         nome: "Peixes",
         desc: "Este é o signo mais romântico do zodíaco. Sonhador e carinhoso, ele está sempre preocupado com o bem estar dos outros. Sensível e carinhoso, acredita em contos de fadas e acha que todos merecem um final feliz."
-    }, 
+    },
 }
 // JS puro
 
 //FUNÇÃO PARA CALCULAR A IDADE
 function calculaIdade(data1, data2) {
-    var diams=1000*60*60*24;
+    var diams = 1000 * 60 * 60 * 24;
 
     var tempoms1 = data1.getTime();
     var tempoms2 = data2.getTime();
     var tempoms = tempoms2 - tempoms1;
 
-    var dias = tempoms/diams;
+    var dias = tempoms / diams;
 
-    return dias/365;
+    return dias / 365;
 }
 
 // FUNÇÃO PARA RETORNAR UM SIGNO
 function getSigno(dia, mes) {
     if ((dia >= 21) && (mes == 3) || (dia <= 19) && (mes == 4)) {
         return "aries";
-     } else {
-         if ((dia >= 20) && (mes == 4) || (dia <= 20) && (mes == 5)) {
+    } else {
+        if ((dia >= 20) && (mes == 4) || (dia <= 20) && (mes == 5)) {
             return "touro";
-         } else {
-             if ((dia >= 21) && (mes == 5) || (dia <= 21) && (mes == 6)) {
+        } else {
+            if ((dia >= 21) && (mes == 5) || (dia <= 21) && (mes == 6)) {
                 return "gemeos";
-             } else {
-                 if ((dia >= 22) && (mes == 6) || (dia <= 22) && (mes == 7)) {
+            } else {
+                if ((dia >= 22) && (mes == 6) || (dia <= 22) && (mes == 7)) {
                     return "cancer";
-                 } else {
-                     if ((dia >= 23) && (mes == 7) || (dia <= 22) && (mes == 8)) {
+                } else {
+                    if ((dia >= 23) && (mes == 7) || (dia <= 22) && (mes == 8)) {
                         return "leao";
-                     } else {
-                         if ((dia >= 23) && (mes == 8) || (dia <= 22) && (mes == 9)) {
+                    } else {
+                        if ((dia >= 23) && (mes == 8) || (dia <= 22) && (mes == 9)) {
                             return "virgem";
-                         } else {
-                             if ((dia >= 23) && (mes == 9) || (dia <= 22) && (mes == 10)) {
+                        } else {
+                            if ((dia >= 23) && (mes == 9) || (dia <= 22) && (mes == 10)) {
                                 return "libra";
-                             } else {
-                                 if ((dia >= 23) && (mes == 10) || (dia <= 21) && (mes == 11)) {
+                            } else {
+                                if ((dia >= 23) && (mes == 10) || (dia <= 21) && (mes == 11)) {
                                     return "escorpião";
-                                 } else {
-                                     if ((dia >= 22) && (mes == 11) || (dia <= 21) && (mes == 12)) {
+                                } else {
+                                    if ((dia >= 22) && (mes == 11) || (dia <= 21) && (mes == 12)) {
                                         return "sagitario";
-                                     } else {
-                                         if ((dia >= 22) && (mes == 12) || (dia <= 19) && (mes == 1)) {
+                                    } else {
+                                        if ((dia >= 22) && (mes == 12) || (dia <= 19) && (mes == 1)) {
                                             return "capricornio";
-                                         } else {
-                                             if ((dia >= 20) && (mes == 1) || (dia <= 18) && (mes == 2)) {
+                                        } else {
+                                            if ((dia >= 20) && (mes == 1) || (dia <= 18) && (mes == 2)) {
                                                 return "aquario";
-                                             } else {
-                                                 if ((dia >= 19) && (mes == 2) || (dia <= 20) && (mes == 3)) {
+                                            } else {
+                                                if ((dia >= 19) && (mes == 2) || (dia <= 20) && (mes == 3)) {
                                                     return "peixes";
-                                                 }
-                                             }
-                                         }
-                                     }
-                                 }
-                             }
-                         }
-                     }
-                 }
-             }
-         }
-     }
-    
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
 }
 // Aqui fica, os scripts com JQuery (a maioria do JS)
 
@@ -134,41 +134,53 @@ $(document).ready(function () {
         }
     });
 
-//FUNÇÃO ENVIAR
-$('#enviaisso').on('click', function  (event) {
-    var nome = $("#nome").val();
-    var datanascimento = new Date($("#dtnasc").val())
-    if (nome.length > 0) {
-        if (datanascimento > new Date()) {
-        $("#erro").text("Digite uma data de nascimento válida");
-        } else {
-            $(".resultados").css("height", "100vh");
-            $(".resultados").css("opacity", "1");
-            $(".resultados").css("padding", "50");
-            $('html, body').animate({
-                scrollTop: $("#resultado").offset().top
-            }, 800, function () {
-                window.location.hash = "#resultado";
-            });
-            primeironome = nome.split(" ")[0];
-            var dia = datanascimento.getDate() + 1;
-            var mes = datanascimento.getMonth()+ 1;
-            var idade = Math.floor(calculaIdade(datanascimento, new Date()));
-            if (idade == 1) {
-                $("#idade").text(idade.toString() + " ano");
+    //FUNÇÃO ENVIAR
+    $('#enviaisso').on('click', function (event) {
+        var nome = $("#nome").val();
+        var datanascimento = new Date($("#dtnasc").val())
+        if (nome.length > 0) {
+            if (datanascimento > new Date()) {
+                $("#erro").text("Digite uma data de nascimento válida");
             } else {
-                $("#idade").text(idade.toString() + " anos");
+                if (datanascimento != "Invalid Date") {
+                    $(".resultados").css("height", "100vh");
+                    $(".resultados").css("opacity", "1");
+                    $(".resultados").css("padding", "50");
+                    $('html, body').animate({
+                        scrollTop: $("#resultado").offset().top
+                    }, 800, function () {
+                        window.location.hash = "#resultado";
+                    });
+                    primeironome = nome.split(" ")[0];
+                    var dia = datanascimento.getDate() + 1;
+                    var mes = datanascimento.getMonth() + 1;
+                    var idade = Math.floor(calculaIdade(datanascimento, new Date()));
+                    if (idade == 1) {
+                        $("#idade").text(idade.toString() + " ano");
+                    } else {
+                        $("#idade").text(idade.toString() + " anos");
+                    }
+                    $("#primeironome").text(primeironome);
+                    $("#nomedapessoa").text(nome);
+                    var signo = getSigno(dia, mes);
+                    $("#signopessoa").text(descSignos[signo].nome);
+                    $("#descsigno").text(descSignos[signo].desc);
+                } else {
+                    $("#erro").text("Digite uma data de nascimento válida");
+                }
             }
-            $("#primeironome").text(primeironome);
-            $("#nomedapessoa").text(nome);
-            var signo = getSigno(dia,mes);  
-            $("#signopessoa").text(descSignos[signo].nome);
-            $("#descsigno").text(descSignos[signo].desc)
+        } else {
+            $("#erro").text("Digite um nome válido");
         }
-    } else {
-        $("#erro").text("Digite um nome válido");
-    }
-});
-});
+    });
 
-// script de submit do formulário 
+    //FUNÇÃO VOLTAR 
+    $("#voltartopo").on('click', function () {
+        $(".resultados").css("height", "0");
+        $(".resultados").css("opacity", "0");
+        $(".resultados").css("padding", "-100");
+        $("#nome").val("");
+        $("#dtnasc").val("");
+    });
+
+});

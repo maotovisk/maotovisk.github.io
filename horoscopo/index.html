@@ -12,6 +12,10 @@
     <title>Descubra seu signo...</title>
 </head>
 
+<div id='stars'></div>
+<div id='stars2'></div>
+<div id='stars3'></div>
+
 <body>
     <section class="inicio" id="inicio-estrelas">
         <div class="container">
@@ -30,41 +34,47 @@
     <section class="formsection" id="formsigno">
         <div class="container center">
             <div class="form-dados">
-                <div class="titulo-form row"> <div class="col-md-12 center"><h1>Vamos nos conhecer... </h1></div></div>
-                <div class="corpoform row"> <div class="col-md-12 center">
-                    <div class="nomecont row">
-                        <div class="col-md-2"></div>
-                        <div class="col-md-8 left"><span class="formlabel">Insira seu nome...</span></div>
-                        <div class="col-md-2"></div>
+                <div class="titulo-form row">
+                    <div class="col-md-12 center">
+                        <h1>Vamos nos conhecer... </h1>
                     </div>
-                    <div class="dtnasccont row">
-                        <div class="col-md-2"></div>
-                        <div class="col-md-8"><input id="nome" type="text"></div>
-                        <div class="col-md-2"></div>
-                    </div>
-                    <div class="dtnasccont row">
-                        <div class="col-md-2"></div>
-                        <div class="col-md-8 left"><span class="formlabel">Insira sua data de nascimento...</span></div>
-                        <div class="col-md-2"></div>
-                    </div>
-                    <div class="dtnasccont row">
-                        <div class="col-md-2"></div>
-                        <div class="col-md-8"><input id="dtnasc" type="date"></div>
-                        <div class="col-md-2"></div>
-                    </div>
-                    <div class="enviarcont row">
+                </div>
+                <div class="corpoform row">
+                    <div class="col-md-12 center">
+                        <div class="nomecont row">
                             <div class="col-md-2"></div>
-                        <div class="col-md-8 center-block"><span class="erro" id="erro"></span></div>
-                        <div class="col-md-2"></div>
-                    </div>
-                    <div class="dtnasccont row">
-                        <div class="col-md-2"></div>
-                        <div class="col-md-8 right"><button id="enviaisso" class="enviar">Enviar</button></div>
-                        <div class="col-md-2"></div>
+                            <div class="col-md-8 left"><span class="formlabel">Insira seu nome...</span></div>
+                            <div class="col-md-2"></div>
+                        </div>
+                        <div class="dtnasccont row">
+                            <div class="col-md-2"></div>
+                            <div class="col-md-8"><input id="nome" type="text"></div>
+                            <div class="col-md-2"></div>
+                        </div>
+                        <div class="dtnasccont row">
+                            <div class="col-md-2"></div>
+                            <div class="col-md-8 left"><span class="formlabel">Insira sua data de nascimento...</span>
+                            </div>
+                            <div class="col-md-2"></div>
+                        </div>
+                        <div class="dtnasccont row">
+                            <div class="col-md-2"></div>
+                            <div class="col-md-8"><input id="dtnasc" type="date"></div>
+                            <div class="col-md-2"></div>
+                        </div>
+                        <div class="enviarcont row">
+                            <div class="col-md-2"></div>
+                            <div class="col-md-8 center-block"><span class="erro" id="erro"></span></div>
+                            <div class="col-md-2"></div>
+                        </div>
+                        <div class="dtnasccont row">
+                            <div class="col-md-2"></div>
+                            <div class="col-md-8 right"><button id="enviaisso" class="enviar">Enviar</button></div>
+                            <div class="col-md-2"></div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
     </section>
     <section class="resultados" id="resultado">
         <div class="container">
@@ -76,8 +86,8 @@
             <div class="dados row">
                 <div class="col-md-5 left">
                     <h2>Dados</h2>
-                        <p>Nome: <span id="nomedapessoa">Nome da Pessoa</span></p>
-                        <p>Idade: <span id="idade">XX anos</span></p>
+                    <p>Nome: <span id="nomedapessoa">Nome da Pessoa</span></p>
+                    <p>Idade: <span id="idade">XX anos</span></p>
                 </div>
                 <div class="col-md-7 center">
                     <h2 id="signopessoa">Signo da Pessoa</h2>
@@ -85,8 +95,11 @@
                 </div>
             </div>
         </div>
-    </section>
 
+    <a id="voltartopo" class="scroll-button" href="#inicio-estrelas"><i class="material-icons md-72">
+            keyboard_arrow_up
+        </i></a>
+    </section>
 </body>
 
 </html>
