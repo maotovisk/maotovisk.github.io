@@ -1,13 +1,13 @@
 +++
-title = 'Screenshoting and uploading files to a file hosting service on Linux'
+title = 'Enviando capturas de tela para um serviço de hospedagem de arquivos no linux automaticamente'
 date = 2023-06-05T20:57:17-03:00
 draft = false
-ShowWordCount = false
+hideMeta = false
 +++
 
-Based on the work found at [s-ul-curl-uploader](https://github.com/remanifest/s-ul-curl-uploader) and [this issue](https://github.com/flameshot-org/flameshot/issues/178#issuecomment-719898433), this is a bash script to quickly upload your flameshot screenshots into the [s-ul.eu](https://s-ul.eu) service.
+Com base no trabalho encontrado em [s-ul-curl-uploader](https://github.com/remanifest/s-ul-curl-uploader) e [neste problema](https://github.com/flameshot-org/flameshot/issues/178#issuecomment-719898433), este é um script bash para fazer o upload rápido de capturas de tela do Flameshot para o serviço [s-ul.eu](https://s-ul.eu).
 
-## Dependencies
+## Dependências
 
 - flameshot
 - curl
@@ -16,84 +16,84 @@ Based on the work found at [s-ul-curl-uploader](https://github.com/remanifest/s-
 - wl-clipboard
 - jq
 
-### Arch dependency installation
+### Instalação de dependências no Arch
 
 ```
 sudo pacman -S flameshot curl libnotify xclip wl-clipboard jq
 ```
 
-## Installation
+## Instalação
 
-### Download
+### Download automático
 
 ```
 curl -o /home/$USER/.local/bin/sul-uploader https://gist.github.com/maotovisk/1a6a50c90982535bbaa69f6d8203ac74/raw/356f80ecc41587d09c0c68c84099c1c81f326002/sul-uploader
 ```
 
-### The script
+### O script
 
 ```bash
 #!/bin/bash
 
-app_name="S-UL"
+nome_aplicativo="S-UL"
 
-# Dependencies: curl, notify-send, xclip, wl-clipboard, jq
-function _notify()
+# Dependências: curl, notify-send, xclip, wl-clipboard, jq
+function _notificar()
 {
     notify-send --expire-time 1000 \
-        --app-name "$app_name" \
+        --app-name "$nome_aplicativo" \
         --icon 'flameshot' \
         "$1" "$2"
 }
 
-store_directory=/home/$USER/s-ul
-if [[ ! -e $store_directory ]]; then
-    mkdir $store_directory
+diretorio_armazenamento=/home/$USER/s-ul
+if [[ ! -e $diretorio_armazenamento ]]; then
+    mkdir $diretorio_armazenamento
 fi
 
-current_date=`date +"%Y-%m-%d %H-%M-%S"`
-filename="Screenshot_$current_date.png"
-complete_path="${store_directory}/${filename}"
+data_atual=`date +"%Y-%m-%d %H-%M-%S"`
+nome_arquivo="Screenshot_$data_atual.png"
+caminho_completo="${diretorio_armazenamento}/${nome_arquivo}"
 
-flameshot gui -r >> "$complete_path"
+flameshot gui -r >> "$caminho_completo"
 
-if [[ $(file --mime-type -b "$complete_path") != "image/png" ]]; then
-    rm "$complete_path"
-    _notify "$app_name" "Screenshot aborted" && exit 1
+if [[ $(file --mime-type -b "$caminho_completo") != "image/png" ]]; then
+    rm "$caminho_completo"
+    _notificar "$nome_aplicativo" "Captura de tela cancelada" && exit 1
 fi
 
-key="YOUR_API_KEY_HERE"
+chave="SUA_CHAVE_API_AQUI"
 
-method=POST
-postURL=https://s-ul.eu/api/v1/upload
-wizard=true
-file="$complete_path"
+metodo=POST
+url_post="https://s-ul.eu/api/v1/upload"
+assistente=true
+arquivo="$caminho_completo"
 
-actualsize=$(wc -c <"$file")
-maxsize=209714177
+tamanho_real=$(wc -c <"$arquivo")
+tamanho_maximo=209714177
 
-if [ $actualsize -ge $maxsize ]; then
-    _notify "\nSorry, your file is too large to be uploaded. Please try a smaller file.\n";
+if [ $tamanho_real -ge $tamanho_maximo ]; then
+    _notificar "\nDesculpe, seu arquivo é muito grande para ser enviado. Por favor, tente um arquivo menor.\n"
 fi
 
-_notify "$app_name" 'Uploading screenshot...'
+_notificar "$nome_aplicativo" 'Enviando captura de tela...'
 
-read url < <(echo $(curl -s -X ""$method"" """$postURL""?key=""$key""&wizard=""$wizard""" -F"file=@\"""$file""\"" | jq -r '.url'))
+read url < <(echo $(curl -s -X ""$metodo"" """$url_post""?key=""$chave""&wizard=""$assistente""" -F"file=@\"""$arquivo""\"" | jq -r '.url'))
 if [ -z "$url" ]; then
-    _notify "$app_name" "Error: Error while uploading"
+    _notificar "$nome_aplicativo" "Erro: Erro ao enviar"
 else
     if [ $XDG_SESSION_TYPE = "x11" ]; then
         echo -n "$url" | xclip -selection clipboard
     else
         wl-copy "$url"
     fi
-    _notify "$app_name" 'Success! The link was sent to your clipboard'
+    _notificar "$nome_aplicativo" 'Sucesso! O link foi enviado para a sua área de transferência'
 fi
 ```
 
-### Installation
+### Instalação
 
-- Make it executable `chmod +x .local/bin/sul-uploader`
-- Edit the file and put your s-ul API Key into the `key` variable at line 30, you can find your api key at https://s-ul.eu/account/configurations
-- Add a new shortcut to run the script in yout desktop enviroment settings
-  - Remember to add it with the full path `/home/$USER/.local/bin/sul-uploader`, since most DEs don't add .local/bin into $PATH by default.
+- Torne-o executável \`chmod +x .local/bin/sul-uploader\`
+- Edite o arquivo e coloque sua Chave API do s-ul na variável \`key\` na linha 30, você pode encontrar sua chave API em https://s-ul.eu/account/configurations
+- Adicione um novo atalho para executar o script nas configurações do seu ambiente de desktop
+  - Lembre-se de adicioná-lo com o caminho completo \`/home/$USER/.local/bin/sul-uploader\`, já que a maioria dos ambientes de desktop não adiciona .local/bin ao $PATH por padrão.

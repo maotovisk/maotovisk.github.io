@@ -24,7 +24,7 @@ sudo pacman -S flameshot curl libnotify xclip wl-clipboard jq
 
 ## Installation
 
-### Download
+### Automatic Download
 
 ```
 curl -o /home/$USER/.local/bin/sul-uploader https://gist.github.com/maotovisk/1a6a50c90982535bbaa69f6d8203ac74/raw/356f80ecc41587d09c0c68c84099c1c81f326002/sul-uploader

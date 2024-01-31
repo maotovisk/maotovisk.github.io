@@ -49,9 +49,9 @@ languages:
           name: contato
           url: /pt-br/contact/
           weight: 30
-        - identifier: osuprofile
-          name: perfil no osu!
-          url: https://osu.ppy.sh/users/maot
+        - identifier: githubprofile
+          name: perfil no github
+          url: https://github.com/maotovisk
           weight: 30
 
 params:
@@ -173,9 +173,9 @@ menu:
       name: contact
       url: /contact/
       weight: 30
-    - identifier: osuprofile
-      name: osu! profile
-      url: https://osu.ppy.sh/users/maot
+    - identifier: githubprofile
+      name: github profile
+      url: https://github.com/maotovisk
       weight: 30
 # Read: https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#using-hugos-syntax-highlighter-chroma
 pygmentsUseClasses: true

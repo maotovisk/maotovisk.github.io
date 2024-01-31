@@ -1,6 +1,6 @@
 +++
 title = 'Integrando o explorador de arquivos nativo do linux com o Wine.'
-date = 2024-01-30T20:24:04-03:00
+date = 2022-09-30T20:24:04-03:00
 draft = false
 hideMeta = false
 ShowWordCount = true
